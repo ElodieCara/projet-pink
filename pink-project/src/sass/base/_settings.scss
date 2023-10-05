@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1000;
+  overflow: hidden;
+  background-image: linear-gradient(to top, #c1a6b6, rgba(255, 255, 255, 0)),
+    url("@/assets/pawel.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 1204px;
+}
+
+header {
+  height: 800px;
+}
