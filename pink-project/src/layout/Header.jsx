@@ -1,5 +1,5 @@
 import Navbar from "../layout/Navbar";
-import Logo from "../assets/Logo.svg";
+import Air from "../assets/Air.svg";
 import Cloud from "../assets/Cloud.svg";
 
 export default function Header() {
@@ -10,7 +10,7 @@ export default function Header() {
         <div className="header__container__title">
           <img
             className="header__container__title__icon--air"
-            src={Logo}
+            src={Air}
             alt="Logo Alifey et ses nuages"
           />
           <h1>Alifey</h1>
