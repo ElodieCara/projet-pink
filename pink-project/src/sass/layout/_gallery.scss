@@ -1,0 +1,39 @@
+.gallery {
+  width: 1024px;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0 auto;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 4px solid $primary-color;
+
+    &__list {
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+
+      &__link {
+        margin: 0 35px;
+        color: $primary-color;
+      }
+    }
+
+    &__search {
+      display: flex;
+      align-items: center;
+      width: 370px;
+      height: 62px;
+      background-color: #d9d9d99e;
+    }
+  }
+
+  &__container {
+    &__cards {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 10px;
+    }
+  }
+}

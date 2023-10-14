@@ -34,3 +34,22 @@ a {
 header {
   height: 800px;
 }
+
+input {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+li {
+  font-family: $font-family-primary;
+}
+
+.colored-image {
+  color: #d9d9;
+}

@@ -23,8 +23,8 @@ export default function Header() {
         <div className="header__container__quote">
           <blockquote>
             <p>
-              "Il faut donc être au-dessus des nuages pour <br />
-              que nos yeux s'y baignent..."
+              Il faut donc être au-dessus des nuages pour <br />
+              que nos yeux s/y baignent...
             </p>
             <cite>Jean Cocteau</cite>
           </blockquote>
