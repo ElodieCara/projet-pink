@@ -1,8 +1,17 @@
 // import Search from "../assets/Search.svg";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import SearchBar from "../components/SearchBar";
+import { articles } from "../data/data.js";
 
-const Gallery = () => {
+function Gallery() {
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    setNews(articles);
+  }, []);
+
   return (
     <div className="gallery">
       <div className="gallery__nav">
@@ -16,9 +25,17 @@ const Gallery = () => {
         </div>
       </div>
       <div className="gallery__container">
-        <section className="gallery__container__cards">
-          <Card />
-        </section>
+        {news.map((news, id) => (
+          <section className="gallery__container__cards" key={id}>
+            <Link to={`/news/${news.id}`}>
+              <Card
+                image={news.image}
+                title={news.title}
+                content={news.content}
+              />
+            </Link>
+          </section>
+        ))}
         <div className="gallery__container__pages">
           <div className="gallery__container__pages__loader">
             <img src="" alt="" />
@@ -29,6 +46,6 @@ const Gallery = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Gallery;

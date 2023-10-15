@@ -30,10 +30,12 @@
   }
 
   &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 12px;
+    grid-row-gap: 11px;
     &__cards {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 10px;
     }
   }
 }
