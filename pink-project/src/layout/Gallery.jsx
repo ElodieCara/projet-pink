@@ -16,9 +16,9 @@ function Gallery() {
     <div className="gallery">
       <div className="gallery__nav">
         <ul className="gallery__nav__list">
+          <li className="gallery__nav__list__link">All</li>
           <li className="gallery__nav__list__link">News</li>
           <li className="gallery__nav__list__link">Articles</li>
-          <li className="gallery__nav__list__link">Blog</li>
         </ul>
         <div className="gallery__nav__search">
           <SearchBar />
