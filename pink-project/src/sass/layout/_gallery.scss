@@ -30,12 +30,10 @@
   }
 
   &__container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 12px;
-    grid-row-gap: 11px;
-    &__cards {
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 35px;
+    gap: 15px;
   }
 }

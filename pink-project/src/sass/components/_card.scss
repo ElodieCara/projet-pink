@@ -1,8 +1,52 @@
 .card {
   border: 2px solid white;
+  width: 30%;
+  height: 30%;
+  // margin-bottom: 15px;
 
-  &__image {
-    width: 250px;
-    height: auto;
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      width: if($i == 2, 66%, 32%);
+    }
+  }
+
+  &__body {
+    height: 500px;
+  }
+}
+
+.interview {
+  background-color: $primary-color;
+
+  .card__image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    width: 100%;
+    height: 250px;
+  }
+}
+
+.article {
+  // background-color: black;
+  .card__image {
+    height: 500px;
+    overflow: hidden;
+    object-fit: contain;
+    object-position: center;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .card__content {
+    position: relative;
+    bottom: 200px;
   }
 }

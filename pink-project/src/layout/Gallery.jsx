@@ -26,15 +26,16 @@ function Gallery() {
       </div>
       <div className="gallery__container">
         {news.map((news, id) => (
-          <section className="gallery__container__cards" key={id}>
+          <div className="card" key={id}>
             <Link to={`/news/${news.id}`}>
               <Card
                 image={news.image}
                 title={news.title}
                 content={news.content}
+                type={news.type}
               />
             </Link>
-          </section>
+          </div>
         ))}
         <div className="gallery__container__pages">
           <div className="gallery__container__pages__loader">
