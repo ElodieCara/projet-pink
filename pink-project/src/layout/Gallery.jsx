@@ -33,6 +33,7 @@ function Gallery() {
                 title={news.title}
                 content={news.content}
                 type={news.type}
+                date={news.date}
               />
             </Link>
           </div>
