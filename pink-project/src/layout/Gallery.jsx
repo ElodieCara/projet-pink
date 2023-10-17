@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import SearchBar from "../components/SearchBar";
 import { articles } from "../data/data.js";
+import Air from "../assets/Air.svg";
 
 function Gallery() {
   const [news, setNews] = useState([]);
@@ -40,7 +41,7 @@ function Gallery() {
         ))}
         <div className="gallery__container__pages">
           <div className="gallery__container__pages__loader">
-            <img src="" alt="" />
+            <img src={Air} alt="Logo Cloud" style={{ width: "80px" }} />
             <p>load more articles</p>
           </div>
           <div className="gallery__container__pages__number">123...5</div>
