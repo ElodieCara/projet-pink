@@ -26,45 +26,40 @@ const SlideShow = ({ testimonials }) => {
   const currentTestimonial = testimonials[currentSlide];
 
   return (
-    <div className="testimonial__container__slide">
+    <div className="testimonial__container">
       {slideArrayLength > 1 && (
         <FontAwesomeIcon
-          icon={faArrowAltCircleRight}
-          className="container__slide__arrow--prev"
+          icon={faArrowAltCircleLeft}
+          className="testimonial__container__arrow testimonial__container__slide__arrow--prev"
           alt="flèche photos suivante"
           onClick={nextSlide}
         />
       )}
+
+      <div className="testimonial__container__slide">
+        <div className="testimonial__container__slide__image">
+          <img src={currentTestimonial.photo} alt={currentTestimonial.name} />
+        </div>
+        <div className="testimonial__container__slide__content">
+          <h2 className="testimonial__container__slide__content__name">
+            {currentTestimonial.name}
+          </h2>
+          <p className="testimonial__container__slide__content__date">
+            {currentTestimonial.date}
+          </p>
+          <p className="testimonial__container__slide__story">
+            {currentTestimonial.content}
+          </p>
+        </div>
+      </div>
       {slideArrayLength > 1 && (
         <FontAwesomeIcon
-          icon={faArrowAltCircleLeft}
-          className="container__slide__arrow--next"
+          icon={faArrowAltCircleRight}
+          className="testimonial__container__arrow testimonial__container__slide__arrow--next"
           alt="flèche photos précédente"
           onClick={prevSlide}
         />
       )}
-      <div className="testimonial__container__slide__image">
-        <img src={currentTestimonial.photo} alt={currentTestimonial.name} />
-      </div>
-      <div className="testimonial__container__slide__content">
-        <h2 className="testimonial__container__slide__name">
-          {currentTestimonial.name}
-        </h2>
-        <p className="testimonial__container__slide__date">
-          {currentTestimonial.date}
-        </p>
-        <p className="testimonial__container__slide__story">
-          {currentTestimonial.content}
-        </p>
-      </div>
-      <span
-        style={
-          slideArrayLength > 1 ? { display: "block" } : { display: "none" }
-        }
-        className="container__slide__number"
-      >
-        {currentSlide + 1}/{slideArrayLength}
-      </span>
     </div>
   );
 };

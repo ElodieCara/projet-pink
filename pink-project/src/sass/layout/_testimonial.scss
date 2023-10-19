@@ -1,5 +1,8 @@
 .testimonial {
-  margin: 100px 0;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 100px 0;
+
   &-title {
     font-family: $font-family-primary;
     font-size: 33px;
@@ -8,6 +11,9 @@
   }
 
   &__container {
-    margin: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 50px 0;
   }
 }
