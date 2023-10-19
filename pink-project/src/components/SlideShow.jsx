@@ -1,24 +1,13 @@
-import { useState, useEffect } from "React";
+import { useState } from "react";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 
 const SlideShow = ({ testimonials }) => {
-  // const [slides, setSlides] = useState([]);
-
-  const [slides, setSlides] = useState([]);
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slideArrayLength = testimonials.length;
-
-  // const slideArrayLength = testimonials.length;
-
-  // useEffect(() => {
-  //   if (testimonials) {
-  //     setSlides(testimonials);
-  //   }
-  // }, [testimonials]);
+  // Utilisation de useState pour gérer l'état local du composant
+  const [currentSlide, setCurrentSlide] = useState(0); // État actuel de la diapositive
+  const slideArrayLength = testimonials.length; // Longueur du tableau de témoignages
 
   // paramétre notre composant pour qu'il gère le déroulement des slides
   const prevSlide = () => {
@@ -33,6 +22,7 @@ const SlideShow = ({ testimonials }) => {
     );
   };
 
+  // Accéder au témoignage actuel en fonction de la diapositive actuelle
   const currentTestimonial = testimonials[currentSlide];
 
   return (
@@ -77,6 +67,10 @@ const SlideShow = ({ testimonials }) => {
       </span>
     </div>
   );
+};
+
+SlideShow.propTypes = {
+  testimonials: PropTypes.array.isRequired,
 };
 
 export default SlideShow;
