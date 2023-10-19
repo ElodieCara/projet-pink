@@ -1,0 +1,13 @@
+.testimonial {
+  margin: 100px 0;
+  &-title {
+    font-family: $font-family-primary;
+    font-size: 33px;
+    text-align: center;
+    color: $primary-color;
+  }
+
+  &__container {
+    margin: 50px;
+  }
+}
