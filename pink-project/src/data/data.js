@@ -97,3 +97,30 @@ export const testimonials = [
       "En m'approchant de lui, j'ai ressenti une énergie particulière, une connexion mystérieuse. Cumulus semblait me murmurer ses rêves. Il désirait s'élever plus haut, quitter la gravité, et explorer les confins du ciel. Son rêve était de vivre en apesanteur, de danser entre les étoiles.",
   },
 ];
+
+export const reservation = [
+  {
+    id: 201,
+    title: "nuage de pluie",
+    name: "Nimbus",
+    content: "Pour les mélancoliques",
+  },
+  {
+    id: 202,
+    title: "nuage de glace",
+    name: "Cirrus",
+    content: "Pour ceux qui non pas froid aux yeux",
+  },
+  {
+    id: 203,
+    title: "nuage moelleux",
+    name: "Cumulus",
+    content: "Pour faire le pleins de sérénité",
+  },
+  {
+    id: 204,
+    title: "nuage gris",
+    name: "Stratus",
+    content: "Pour broyer du noir en paix",
+  },
+];

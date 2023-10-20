@@ -9,7 +9,7 @@ export default function Testimonial() {
 
   return (
     <div className="testimonial">
-      <div className="testimonial-title">Témoignagnes</div>
+      <h2 className="testimonial-title">Témoignagnes</h2>
       <div className="testimonial__container">
         <SlideShow testimonials={testimonials} />
       </div>
