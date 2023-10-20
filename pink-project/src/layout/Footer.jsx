@@ -21,7 +21,7 @@ export default function Footer() {
             <h2>Inspiration</h2>
             <li>Succes Stories</li>
             <li>Galerie de projets</li>
-            <li>Citaitons Inspirantes</li>
+            <li>Citations Inspirantes</li>
           </ul>
         </div>
         <div className="footer__container__column">

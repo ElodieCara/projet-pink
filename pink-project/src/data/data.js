@@ -109,13 +109,13 @@ export const reservation = [
     id: 202,
     title: "nuage de glace",
     name: "Cirrus",
-    content: "Pour ceux qui non pas froid aux yeux",
+    content: "Pour ceux qui n'ont pas froid aux yeux",
   },
   {
     id: 203,
     title: "nuage moelleux",
     name: "Cumulus",
-    content: "Pour faire le pleins de sérénité",
+    content: "Pour faire le plein de sérénité",
   },
   {
     id: 204,
