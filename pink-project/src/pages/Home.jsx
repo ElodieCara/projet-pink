@@ -1,6 +1,7 @@
 import Gallery from "../layout/Gallery";
 import Header from "../layout/Header";
 import Reservation from "../layout/Reservation";
+import Subscribe from "../layout/Subscribe";
 import Testimonial from "../layout/Testimonial";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <Gallery />
       <Testimonial />
       <Reservation />
+      <Subscribe />
     </>
   );
 }

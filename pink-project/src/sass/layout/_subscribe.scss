@@ -1,0 +1,42 @@
+.subscribe {
+  width: 1024px;
+  margin: 0 auto;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem;
+    height: 350px;
+    border-top: 1px solid $primary-color;
+
+    &__text {
+      width: 70%;
+      color: white;
+      line-height: 4rem;
+      font-family: $font-family-primary;
+
+      & h2 {
+        font-size: 54px;
+        font-weight: 400;
+      }
+
+      & p {
+        font-size: 30px;
+        margin-left: 6rem;
+      }
+    }
+
+    &__btn {
+      @include btn;
+      display: flex;
+      justify-content: center;
+
+      & button {
+        color: white !important;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 100;
+      }
+    }
+  }
+}

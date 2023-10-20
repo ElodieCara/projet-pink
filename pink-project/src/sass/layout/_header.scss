@@ -79,7 +79,11 @@
       &__link--btn {
         padding: 15px;
         margin-left: 20px;
-        @include btn;
+        border: 3px solid white;
+        background-color: $primary-color;
+        width: 220px;
+        text-align: center;
+        cursor: pointer;
       }
 
       &__icon {

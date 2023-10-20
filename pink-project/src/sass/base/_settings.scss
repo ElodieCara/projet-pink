@@ -60,6 +60,17 @@ li {
   font-family: $font-family-primary;
 }
 
+button {
+  /* Réinitialisation des styles par défaut du bouton */
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
 img {
   max-width: 100%;
   height: auto;

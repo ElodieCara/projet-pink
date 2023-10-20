@@ -1,9 +1,22 @@
 /* --- Button --- */
 
+// @mixin btn {
+//   border: 3px solid white;
+//   background-color: $primary-color;
+//   width: 220px;
+//   text-align: center;
+//   cursor: pointer;
+// }
+
 @mixin btn {
-  border: 3px solid white;
-  background-color: $primary-color;
-  width: 220px;
-  text-align: center;
+  border: 1px solid $primary-color;
+  border-radius: 30px;
+  background-color: #d9d9d994;
+  color: black;
+  font-weight: bold;
+  margin: 2px;
+  font-size: 14px;
   cursor: pointer;
+  width: 150px;
+  height: 50px;
 }
