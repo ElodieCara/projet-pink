@@ -1,3 +1,4 @@
+import Footer from "../layout/Footer";
 import Gallery from "../layout/Gallery";
 import Header from "../layout/Header";
 import Reservation from "../layout/Reservation";
@@ -12,6 +13,7 @@ export default function Home() {
       <Testimonial />
       <Reservation />
       <Subscribe />
+      <Footer />
     </>
   );
 }

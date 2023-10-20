@@ -1,0 +1,46 @@
+.footer {
+  width: 100%;
+
+  background-color: #a77491;
+
+  &__container {
+    width: 1024px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+
+    &__column {
+      width: 30%;
+      height: 100%;
+      color: white;
+      padding: 2rem;
+      border-right: 1px solid white;
+
+      & h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      & li {
+        font-size: 14px;
+        font-weight: 100;
+      }
+
+      &--socials {
+        border-right: 1px solid #a77491;
+
+        & ul {
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+        }
+      }
+    }
+
+    &__logo {
+      position: relative;
+      bottom: 130px;
+      width: 50%;
+    }
+  }
+}
