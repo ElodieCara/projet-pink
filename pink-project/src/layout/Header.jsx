@@ -23,10 +23,9 @@ export default function Header() {
         <div className="header__container__quote">
           <blockquote>
             <p>
-              Il faut donc être au-dessus des nuages pour <br />
-              que nos yeux s/y baignent...
+              Découvrez un tout nouveau niveau de relaxation <br /> en réservant
+              un rendez-vous exclusif avec les nuages .
             </p>
-            <cite>Jean Cocteau</cite>
           </blockquote>
         </div>
       </div>

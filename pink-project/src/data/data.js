@@ -62,7 +62,7 @@ export const testimonials = [
     date: "30 février",
     title: "Jour où les lapins dansent",
     content:
-      "J'ai passé du temps avec Nimbus, ce merveilleux nuage curieux. Il m'a raconté comment il ne pouvait pas danser avec les lapins le 30 février, mais comment il apportait sa contribution en créant des couchers de soleil magiques pour égayer leur danse. C'était une leçon sur la diversité et l'importance de chacun dans la nature.",
+      "J'ai passé du temps avec Nimbus, ce merveilleux nuage curieux. Il m'a raconté que puisqu'il ne pouvait pas danser avec les lapins ce 30 février, il apporterait sa contribution en créant des couchers de soleil magiques pour égayer leur danse. C'était une leçon sur la diversité et l'importance de chacun dans la nature.",
   },
   {
     id: 102,
@@ -70,7 +70,7 @@ export const testimonials = [
     name: "Aurore Brume",
     date: "42 octobre",
     content:
-      "Ce moment avec Nimbus, le nuage du 42 octobre, était un cadeau que je me suis fait à moi-même. C'était une expérience magique qui m'a rappelé que la beauté et la réconfort sont partout, même dans les endroits les plus inattendus. Ce jour restera gravé dans ma mémoire comme une parenthèse enchantée, un instant de connexion profonde avec la nature et avec moi-même.",
+      "Ce moment avec Nimbus, le nuage du 42 octobre, était un cadeau que je me suis fait à moi-même. C'était une expérience magique qui m'a rappelé que la beauté et le réconfort sont partout, même dans les endroits les plus inattendus. Ce jour restera gravé dans ma mémoire comme une parenthèse enchantée, un instant de connexion profonde avec la nature et avec moi-même.",
   },
   {
     id: 103,
@@ -78,7 +78,7 @@ export const testimonials = [
     name: "Éden Pluie",
     date: "4 avril",
     content:
-      "Ensemble, nous avons contemplé le ciel infini. Cumulus flottait doucement au-dessus de moi, comme s'il voulait me montrer à quoi ressemblait un monde sans limites. Le 0 avril était un jour où l'impossible devenait possible, et j'ai ressenti une vague d'optimisme, une croyance en la réalisation des rêves les plus fous.",
+      "Ensemble, nous avons contemplé le ciel infini. Cumulus flottait doucement au-dessus de moi, comme s'il voulait me montrer à quoi ressemblait un monde sans limites. Le 4 avril était un jour où l'impossible devenait possible, et j'ai ressenti une vague d'optimisme, une croyance en la réalisation des rêves les plus fous.",
   },
   {
     id: 104,
@@ -86,7 +86,7 @@ export const testimonials = [
     name: "Iris Orage",
     date: "31 février",
     content:
-      "Au moment de partir, j'ai regardé Cumulus s'élever lentement dans le ciel, réalisant que même sur le 0 avril, certaines rêves étaient encore hors de portée. Cependant, ce jour unique m'avait rappelé l'importance de rêver, de croire en l'impossible, et de célébrer la magie qui peut surgir, même au cœur des jours les plus farfelus.",
+      "Au moment de partir, j'ai regardé Cumulus s'élever lentement dans le ciel, réalisant que même  certains rêves étaient encore hors de portée. Cependant, ce jour unique m'avait rappelé l'importance de rêver, de croire en l'impossible, et de célébrer la magie qui peut surgir, même au cœur des jours les plus farfelus.",
   },
   {
     id: 105,

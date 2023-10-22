@@ -85,3 +85,15 @@ img {
 .colored-image {
   color: #d9d9;
 }
+
+blockquote P {
+  quotes: "‘‘ " " ’’";
+}
+
+blockquote p::before {
+  content: open-quote;
+}
+
+blockquote p::after {
+  content: close-quote;
+}

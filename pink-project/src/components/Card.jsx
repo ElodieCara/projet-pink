@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
@@ -29,6 +30,14 @@ const Card = ({ type, image, title, content, date }) => {
       </div>
     </div>
   );
+};
+
+Card.propTypes = {
+  type: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
 };
 
 export default Card;
