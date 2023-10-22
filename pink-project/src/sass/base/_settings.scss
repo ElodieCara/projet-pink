@@ -59,6 +59,10 @@ input {
 li {
   font-family: $font-family-primary;
   list-style: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 button {

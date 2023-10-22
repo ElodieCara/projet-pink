@@ -80,10 +80,18 @@
         padding: 15px;
         margin-left: 20px;
         border: 3px solid white;
-        background-color: $primary-color;
+        background: rgba(255, 255, 255, 0.5);
+
         width: 220px;
         text-align: center;
         cursor: pointer;
+
+        &:hover {
+          // box-shadow: 0 0 20px #fff;
+          background-color: $primary-color;
+          color: #c2a6b4;
+          text-decoration: none;
+        }
       }
 
       &__icon {

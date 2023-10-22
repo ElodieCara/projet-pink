@@ -31,6 +31,10 @@
       display: flex;
       justify-content: center;
 
+      &:hover {
+        box-shadow: 0 0 20px #fff;
+      }
+
       & button {
         color: white !important;
         text-align: center;

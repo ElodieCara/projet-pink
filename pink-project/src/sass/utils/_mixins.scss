@@ -1,13 +1,5 @@
 /* --- Button --- */
 
-// @mixin btn {
-//   border: 3px solid white;
-//   background-color: $primary-color;
-//   width: 220px;
-//   text-align: center;
-//   cursor: pointer;
-// }
-
 @mixin btn {
   border: 1px solid $primary-color;
   border-radius: 30px;

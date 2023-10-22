@@ -42,7 +42,7 @@ function Gallery() {
         <div className="gallery__container__pages">
           <div className="gallery__container__pages__loader">
             <img src={Air} alt="Logo Cloud" style={{ width: "80px" }} />
-            <p>load more articles</p>
+            <p>Charger les news suivantes</p>
           </div>
           <div className="gallery__container__pages__number">123...5</div>
         </div>
