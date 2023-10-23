@@ -6,3 +6,9 @@ $tertiary-color: #55a9a9;
 /* Background */
 
 $background-gallery: url("@/assets/jawel.jpg");
+
+/*breakpoints*/
+$breakpoints: (
+  desktop: 990px,
+  tablet: 768px,
+);

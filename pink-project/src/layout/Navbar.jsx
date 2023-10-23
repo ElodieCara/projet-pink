@@ -10,7 +10,14 @@ const Navbar = () => {
     <nav className="header__navbar">
       <div className="header__navbar__container">
         <img src={Logo} alt="" style={{ width: "80px" }} />
-        <ul className={click ? "nav--menu active" : "nav--menu"}>
+
+        <ul
+          className={
+            click
+              ? "header__navbar__container__link active"
+              : "header__navbar__container__link"
+          }
+        >
           <li className="header__navbar__container__link--nude">
             <NavLink exact="true" to="" onClick={handleClick}>
               About us

@@ -44,42 +44,116 @@
   }
 
   &__navbar {
-    width: 1024px;
+    width: 100%;
     height: 80px;
     margin: 0 auto;
-    padding: 0 auto;
+    // padding: 0 auto;
+    @include desktop {
+      width: 1024px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
     &__container {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      max-width: 1000px;
       margin: 0;
 
       & ul {
         display: flex;
-        list-style: none;
-        font-weight: bold;
-        font-size: 24px;
-        font-family: $font-family-primary;
-        color: white;
+        flex-direction: column;
+        // background-color: $primary-bg;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: -110%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        padding: 50px;
+        gap: 2rem;
+        @include desktop {
+          display: flex;
+          flex-direction: row;
+          list-style: none;
+          font-weight: bold;
+          font-size: 24px;
+          font-family: $font-family-primary;
+          color: white;
+          width: auto;
+          position: static;
+          opacity: 1;
+          transition: none;
+          padding: 10px;
+          gap: 0;
+        }
+
+        &.active {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          left: 0px;
+          opacity: 1;
+          transition: all 0.5s ease;
+          z-index: 1;
+          background-color: #ffffff;
+          height: 10%;
+          color: $tertiary-color;
+
+          @include desktop {
+            display: flex;
+            align-items: baseline;
+            margin-top: 15px;
+            height: 0;
+          }
+        }
       }
 
       &__link--nude {
-        padding: 15px;
-        margin: 0 20px;
-        cursor: pointer;
+        &:after {
+          content: "";
+          display: block;
+          width: 0;
+          background: transparent;
+          transition: width 0.7s ease, background-color 0.5s ease;
+        }
+
+        &:hover {
+          background-color: $primary-color;
+          // color: #c2a6b4;
+          text-decoration: none !important;
+          @include desktop {
+            background-color: transparent;
+            text-decoration: underline !important;
+            // color: transparent;
+          }
+        }
+
+        &:hover:after {
+          width: 100%;
+          height: 1px;
+        }
+
+        @include desktop {
+          padding: 15px;
+          margin: 0 20px;
+          cursor: pointer;
+        }
       }
 
       &__link--btn {
-        padding: 15px;
-        margin-left: 20px;
-        border: 3px solid white;
-        background: rgba(255, 255, 255, 0.5);
-
-        width: 220px;
         text-align: center;
         cursor: pointer;
+        @include desktop {
+          padding: 15px;
+          border: 3px solid white;
+          background: rgba(255, 255, 255, 0.5);
+          width: 220px;
+          margin-left: 20px;
+        }
 
         &:hover {
           // box-shadow: 0 0 20px #fff;
@@ -90,7 +164,18 @@
       }
 
       &__icon {
-        display: none;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: $primary-color;
+        @include desktop {
+          display: none;
+          // color: $secondary-color;
+        }
       }
     }
   }
