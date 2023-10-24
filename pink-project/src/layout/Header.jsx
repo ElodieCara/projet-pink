@@ -23,8 +23,8 @@ export default function Header() {
         <div className="header__container__quote">
           <blockquote>
             <p>
-              Découvrez un tout nouveau niveau de relaxation <br /> en réservant
-              un rendez-vous exclusif avec les nuages .
+              Découvrez un tout nouveau niveau de relaxation en réservant un
+              rendez-vous exclusif avec les nuages .
             </p>
           </blockquote>
         </div>

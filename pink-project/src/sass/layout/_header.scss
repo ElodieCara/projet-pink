@@ -1,47 +1,80 @@
 .header {
   &__container {
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include desktop {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
     &__title {
-      display: flex;
+      @include desktop {
+        display: flex;
+        flex-direction: column;
+      }
+
       &__icon {
         &--air {
           position: relative;
-          left: -171px;
-          top: -71px;
+          left: -70px;
+          top: 117px;
           filter: contrast(1.5);
+          width: 9rem;
+          @include desktop {
+            position: relative;
+            left: -171px;
+            top: 16px;
+            filter: contrast(1.5);
+            width: 100%;
+          }
         }
 
         &--cloud {
           position: relative;
-          top: -95px;
-          right: -92px;
-          width: 8rem;
+          top: -103px;
+          right: -180px;
+          width: 3rem;
           filter: contrast(1.5);
+          @include desktop {
+            top: -195px;
+            right: -432px;
+            width: 8rem;
+          }
         }
       }
 
       & h1 {
         color: white;
-        position: absolute;
+        @include desktop {
+          color: white;
+          position: absolute;
+        }
       }
     }
 
     &__quote {
-      position: relative;
-      top: -102px;
-      left: 224px;
       font-family: $font-family-primary;
+      padding: 20px;
+      text-align: center;
       font-size: 24px;
       font-weight: bold;
       color: $primary-color;
+      @include desktop {
+        position: relative;
+        top: -102px;
+        left: 224px;
+        font-size: 24px;
+      }
     }
   }
+
+  /*----- Navbar -----*/
 
   &__navbar {
     width: 100%;
