@@ -13,6 +13,7 @@ export const articles = [
   {
     id: 1,
     image: Stratus,
+    date: "12 oct. 2023",
     title: "Stratus",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     link: "",
@@ -21,6 +22,7 @@ export const articles = [
   {
     id: 2,
     image: Cumulus,
+    date: "12 aout 2023",
     title: "Cumulus",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     link: "",
@@ -38,6 +40,7 @@ export const articles = [
   {
     id: 4,
     image: Nimbus,
+    date: "12 mai 2023",
     title: "Nimbus",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     link: "",

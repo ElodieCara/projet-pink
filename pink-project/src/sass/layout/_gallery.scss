@@ -1,14 +1,24 @@
 .gallery {
-  width: 1024px;
-  // height: 80px;
-  margin: 0 auto;
-  padding: 0 auto;
+  width: 100%;
+  margin: 0;
+  @include desktop {
+    width: 1024px;
+    margin: 0 auto;
+  }
+
+  &--title {
+    @include desktop {
+      display: none;
+    }
+  }
 
   &__nav {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 4px solid $primary-color;
-
+    display: none;
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 4px solid $primary-color;
+    }
     &__list {
       display: flex;
       align-items: center;
@@ -31,40 +41,42 @@
   }
 
   &__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 35px;
-    gap: 15px;
-
-    &__pages {
-      width: 100%;
+    @include desktop {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 35px;
+      gap: 15px;
 
-      &__loader {
-        text-align: center;
+      &__pages {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
 
-        & img {
-          margin-bottom: 10px;
+        &__loader {
+          text-align: center;
+
+          & img {
+            margin-bottom: 10px;
+          }
+
+          & p {
+            color: $primary-color;
+          }
         }
 
-        & p {
-          color: $primary-color;
+        &__number {
+          color: #f1ebee;
+          text-align: center;
+          font-family: $font-family-primary;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 10px;
         }
-      }
-
-      &__number {
-        color: #f1ebee;
-        text-align: center;
-        font-family: $font-family-primary;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: 10px;
       }
     }
   }

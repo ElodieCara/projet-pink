@@ -42,7 +42,9 @@ a {
 }
 
 header {
-  height: 800px;
+  @include desktop {
+    height: 800px;
+  }
 }
 
 input {

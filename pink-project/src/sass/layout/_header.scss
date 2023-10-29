@@ -1,4 +1,8 @@
 .header {
+  margin-bottom: 30px;
+  @include desktop {
+    margin-bottom: 0;
+  }
   &__container {
     width: 100%;
     display: flex;

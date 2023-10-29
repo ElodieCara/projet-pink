@@ -1,39 +1,65 @@
 .card {
-  border: 2px solid white;
-  width: 30%;
-  // height: 30%;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  width: 100%;
+  height: auto;
+  @include desktop {
+    border: 2px solid white;
+    width: 30%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 
-  @for $i from 1 through 5 {
-    &:nth-child(#{$i}) {
-      width: if($i == 2, 66%, 32%);
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        width: if($i == 2, 66%, 32%);
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 0 20px #55a9a9;
+      border: 2px solid #55a9a9;
     }
   }
 
-  &:hover {
-    box-shadow: 0 0 20px #55a9a9;
-    border: 2px solid #55a9a9;
-  }
-
   &__body {
-    height: 450px;
+    height: 100px;
+    padding: 5px 10px;
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    @include desktop {
+      display: block;
+      height: 450px;
+      padding: 0;
+    }
+
+    &.article {
+      display: block;
+      padding: 0;
+    }
   }
 }
 
 .interview {
   background-color: $primary-color;
+  margin-bottom: 2px;
+  @include desktop {
+    margin-bottom: 0;
+  }
 
   .card__image {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    width: 150px;
     overflow: hidden;
-    width: 100%;
-    height: 250px;
+    @include desktop {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      overflow: hidden;
+      width: 100%;
+      height: 250px;
+      margin: 0;
 
-    &-tagline {
-      display: none;
+      &-tagline {
+        display: none;
+      }
     }
   }
 
@@ -41,52 +67,90 @@
     height: 100%;
 
     &__wrapper {
-      height: 25%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      padding: 30px 0;
+      align-items: flex-start;
+      color: black !important;
+      @include desktop {
+        height: 25%;
+        align-items: center;
+        gap: 10px;
+        padding: 30px 0;
+      }
+
+      &-date {
+        display: flex;
+        align-items: flex-end;
+        @include desktop {
+          display: none;
+        }
+      }
 
       &-title {
         font-weight: bold;
+        color: black !important;
       }
 
       &-text {
-        text-align: center;
-        font-weight: 700;
+        @include desktop {
+          text-align: center;
+          font-weight: 700;
+        }
       }
     }
 
     &__button {
-      display: flex;
-      justify-content: flex-end;
-      margin: 15px;
+      @include desktop {
+        display: flex;
+        justify-content: flex-end;
+        margin: 15px;
 
-      &-btn {
-        display: inline-block;
-        border: none;
-        color: white;
-        font-weight: bold;
-        margin: 2px;
-        font-size: 14px;
-        cursor: pointer;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: #55a9a9;
+        &-btn {
+          display: inline-block;
+          border: none;
+          color: white;
+          font-weight: bold;
+          margin: 2px;
+          font-size: 14px;
+          cursor: pointer;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-color: #55a9a9;
+        }
       }
     }
   }
 }
 
 .article {
-  // background-color: black;
+  // margin-bottom: 2px;
+  // @include desktop {
+  //   margin-bottom: 0;
+  // }
+  border: 1px solid white;
+  @include desktop {
+    border: none;
+  }
+
+  .card__body {
+    display: none;
+  }
+
   .card__image {
-    height: 450px;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
     object-fit: contain;
     object-position: center;
+    filter: blur(1px);
+    @include desktop {
+      height: 450px;
+      overflow: hidden;
+      object-fit: contain;
+      object-position: center;
+      filter: blur(0);
+    }
 
     & img {
       width: 100%;
@@ -97,18 +161,22 @@
     }
 
     &-tagline {
-      position: relative;
-      bottom: 440px;
-      left: -21px;
-      background-color: #55a9a9;
-      width: 94px;
-      height: 75px;
-      border-radius: 100% 41% 42% 100% / 68% 47% 53% 70%;
-
-      & svg {
+      display: none;
+      @include desktop {
+        display: block;
         position: relative;
-        left: 43px;
-        bottom: -23px;
+        bottom: 440px;
+        left: -21px;
+        background-color: #55a9a9;
+        width: 94px;
+        height: 75px;
+        border-radius: 100% 41% 42% 100% / 68% 47% 53% 70%;
+
+        & svg {
+          position: relative;
+          left: 43px;
+          bottom: -23px;
+        }
       }
     }
   }
@@ -118,8 +186,11 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    bottom: 350px;
+    bottom: 97px;
     gap: 8rem;
+    @include desktop {
+      bottom: 380px;
+    }
 
     &__wrapper {
       display: flex;
@@ -133,6 +204,7 @@
 
       &-title {
         font-weight: bold;
+        color: black !important;
       }
 
       &-text {
@@ -142,29 +214,27 @@
     }
 
     &__button {
-      &-btn {
-        @include btn;
+      display: none;
+      @include desktop {
+        display: flex;
+        &-btn {
+          @include btn;
 
-        &:hover {
-          box-shadow: 0 0 20px #fff;
+          &:hover {
+            box-shadow: 0 0 20px #fff;
+          }
         }
       }
     }
 
     &-tagline {
       position: relative;
-      // z-index: 0;
       bottom: 139px;
       left: 16px;
-      // transform: rotate(-30deg);
-
       background-color: #55a9a9;
       width: 94px;
       height: 75px;
-      // flex-shrink: 0;
       border-radius: 100% 41% 42% 100% / 68% 47% 53% 70%;
-      // border-radius: 0% 100% 100% 0% / 0% 50% 50% 100%;
-      // border-radius: 1% 99% 42% 58% / 0% 54% 46% 100%;
     }
   }
 }

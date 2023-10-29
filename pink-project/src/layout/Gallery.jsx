@@ -15,6 +15,7 @@ function Gallery() {
 
   return (
     <div className="gallery">
+      <h2 className="gallery--title">Nos Actualités</h2>
       <div className="gallery__nav">
         <ul className="gallery__nav__list">
           <li className="gallery__nav__list__link">All</li>
