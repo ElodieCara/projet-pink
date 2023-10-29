@@ -7,6 +7,8 @@
   }
 
   &--title {
+    padding: 10px 0;
+    background-color: rgb(196 166 181);
     @include desktop {
       display: none;
     }
@@ -41,6 +43,34 @@
   }
 
   &__container {
+    margin: 0 5px;
+    @include desktop {
+      margin: 0;
+    }
+    &__pages {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__loader {
+        border: 1px solid $primary-color;
+        // background-color: $primary-color;
+        @include shadow;
+        margin-top: 30px;
+        padding: 10px 20px;
+
+        & img {
+          display: none;
+        }
+
+        & p {
+          color: white;
+        }
+      }
+
+      &__number {
+        display: none;
+      }
+    }
     @include desktop {
       display: flex;
       flex-wrap: wrap;
@@ -56,9 +86,14 @@
         gap: 1rem;
 
         &__loader {
-          text-align: center;
-
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border: none;
+          box-shadow: none;
           & img {
+            display: block;
+            align-items: center;
             margin-bottom: 10px;
           }
 
@@ -68,6 +103,7 @@
         }
 
         &__number {
+          display: block;
           color: #f1ebee;
           text-align: center;
           font-family: $font-family-primary;
