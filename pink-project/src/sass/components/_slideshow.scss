@@ -1,7 +1,10 @@
 .testimonial__container__slide {
   background-color: $primary-color;
-
   @include shadow;
+  width: 50vh;
+  height: 50vh;
+  margin: 0 auto;
+
   @include desktop {
     display: flex;
     flex-direction: row;
@@ -10,9 +13,14 @@
     height: 300px;
     background: #f1ebee;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    margin: 0 auto;
-    padding: 0 auto;
     gap: 2rem;
+  }
+
+  &--logo {
+    position: relative;
+    bottom: -33px;
+    z-index: 9;
+    left: 39px;
   }
 
   &__arrow {
@@ -43,13 +51,13 @@
     overflow: hidden;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     position: relative;
-    bottom: 12px;
+    bottom: 83px;
     left: 121px;
     z-index: 999;
     width: 100px;
     height: 100px;
-
     @include shadow;
+
     @include desktop {
       width: 284px;
       height: 300px;
@@ -72,14 +80,14 @@
   &__content {
     margin: 0 30px 30px;
     background-color: rgb(124, 90, 123);
-    height: 85%;
+    height: 100%;
     position: relative;
-    bottom: 78px;
-    padding-top: 100px;
+    bottom: 143px;
+    padding-top: 25%;
     color: white;
     text-align: center;
     @include desktop {
-      position: none;
+      text-align: left;
       background-color: transparent;
       box-shadow: none;
       width: 60%;
@@ -93,16 +101,45 @@
       @include desktop {
         font-weight: bold;
         color: black;
+        text-align: left;
       }
     }
 
     &__date {
       margin: 10px 0;
       font-style: oblique;
+      @include desktop {
+        margin: 10px;
+      }
     }
 
     &__story {
-      margin: 10px;
+      margin: 20px;
+      @include desktop {
+        margin: 10px;
+      }
     }
+  }
+
+  &__indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%; // Pour créer des cercles
+  background-color: #ccc; // Couleur des points non sélectionnés
+  margin: 0 5px; // Marge entre les points
+  cursor: pointer;
+  @include desktop {
+    visibility: hidden;
+  }
+
+  &.active {
+    background-color: $tertiary-color;
   }
 }
