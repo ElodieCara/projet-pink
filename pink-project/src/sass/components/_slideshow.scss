@@ -1,59 +1,108 @@
 .testimonial__container__slide {
-  display: flex;
-  border: 1px solid white;
-  width: 100%;
-  height: 300px;
-  background: #f1ebee;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  margin: 0 auto;
-  padding: 0 auto;
-  gap: 2rem;
+  background-color: $primary-color;
+
+  @include shadow;
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid white;
+    width: 100%;
+    height: 300px;
+    background: #f1ebee;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    padding: 0 auto;
+    gap: 2rem;
+  }
 
   &__arrow {
     &--prev {
-      font-size: 50px;
-      color: $primary-color;
-      margin-right: 30px;
-      cursor: pointer;
+      visibility: hidden;
+      @include desktop {
+        visibility: visible;
+        font-size: 50px;
+        color: $primary-color;
+        margin-right: 30px;
+        cursor: pointer;
+      }
     }
 
     &--next {
-      font-size: 50px;
-      color: $primary-color;
-      margin-left: 30px;
-      cursor: pointer;
+      visibility: hidden;
+      @include desktop {
+        visibility: visible;
+        font-size: 50px;
+        color: $primary-color;
+        margin-left: 30px;
+        cursor: pointer;
+      }
     }
   }
 
   &__image {
-    width: 284px;
-    height: 300px;
-    position: relative;
-    top: 30px;
-    left: 30px;
-    filter: lightgray 50%;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+    bottom: 12px;
+    left: 121px;
+    z-index: 999;
+    width: 100px;
+    height: 100px;
 
-    & img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    @include shadow;
+    @include desktop {
+      width: 284px;
+      height: 300px;
+      border-radius: 0;
+      margin: 0;
+      position: relative;
+      top: 30px;
+      left: 30px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: lightgray 50%;
+      }
     }
   }
 
   &__content {
-    width: 60%;
-    padding: 30px;
-    margin: auto;
+    margin: 0 30px 30px;
+    background-color: rgb(124, 90, 123);
+    height: 85%;
+    position: relative;
+    bottom: 78px;
+    padding-top: 100px;
+    color: white;
+    text-align: center;
+    @include desktop {
+      position: none;
+      background-color: transparent;
+      box-shadow: none;
+      width: 60%;
+      height: 0;
+      padding: 30px;
+      margin: auto;
+      color: inherit;
+    }
 
     &__name {
-      font-weight: bold;
+      @include desktop {
+        font-weight: bold;
+        color: black;
+      }
     }
 
     &__date {
       margin: 10px 0;
       font-style: oblique;
+    }
+
+    &__story {
+      margin: 10px;
     }
   }
 }

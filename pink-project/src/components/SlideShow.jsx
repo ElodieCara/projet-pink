@@ -47,7 +47,7 @@ const SlideShow = ({ testimonials }) => {
           <p className="testimonial__container__slide__content__date">
             {currentTestimonial.date}
           </p>
-          <p className="testimonial__container__slide__story">
+          <p className="testimonial__container__slide__content__story">
             {currentTestimonial.content}
           </p>
         </div>
