@@ -21,6 +21,9 @@
     bottom: -33px;
     z-index: 9;
     left: 39px;
+    @include desktop {
+      display: none;
+    }
   }
 
   &__arrow {

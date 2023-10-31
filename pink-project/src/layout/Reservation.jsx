@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 export default function Reservation() {
   const [clouds, setClouds] = useState([]);
+  const isMobile = window.innerWidth > 768;
 
   useEffect(() => {
     setClouds(reservation);
@@ -17,7 +18,10 @@ export default function Reservation() {
           <div
             className="reservation__container__card"
             key={cl}
-            style={{ right: `${cl * 30}px` }}
+            style={{
+              right: isMobile ? `${cl * 30}px` : "",
+              top: !isMobile ? `${cl * 160}px` : "",
+            }}
           >
             <Link to={`/reservations/${clouds.id}`}>
               <div className="reservation__container__card__text">
