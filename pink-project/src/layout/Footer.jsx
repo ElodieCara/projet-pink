@@ -33,23 +33,28 @@ export default function Footer() {
           </ul>
         </div>
         <div className="footer__container__column footer__container__column--socials">
-          <h2>Socials</h2>
           <ul>
-            <li>
-              <FontAwesomeIcon
-                icon={faPinterest}
-                style={{ fontSize: "24px" }}
-              />
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faTwitter} style={{ fontSize: "24px" }} />
-            </li>
-            <li>
-              <FontAwesomeIcon
-                icon={faInstagram}
-                style={{ fontSize: "24px" }}
-              />
-            </li>
+            <h2>Socials</h2>
+            <div className="footer__container__column--socials__content">
+              <li>
+                <FontAwesomeIcon
+                  icon={faPinterest}
+                  style={{ fontSize: "24px" }}
+                />
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  style={{ fontSize: "24px" }}
+                />
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  style={{ fontSize: "24px" }}
+                />
+              </li>
+            </div>
           </ul>
         </div>
         <div className="footer__container__logo">
