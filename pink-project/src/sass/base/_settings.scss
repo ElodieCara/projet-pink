@@ -61,6 +61,8 @@ input {
 li {
   font-family: $font-family-primary;
   list-style: none;
+  cursor: pointer;
+  text-transform: capitalize;
 
   &:hover {
     text-decoration: underline;

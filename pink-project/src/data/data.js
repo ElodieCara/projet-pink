@@ -8,6 +8,9 @@ import Aurore from "@/assets/AuroreBrume.jpg";
 import Eden from "@/assets/Eden.jpg";
 import Iris from "@/assets/Iris.jpg";
 import Ondine from "@/assets/Ondine.jpg";
+import Pinterest from "@/assets/pinterest.svg";
+import Xtwitter from "@/assets/x-twitter.svg";
+import Instagram from "@/assets/instagram.svg";
 
 export const articles = [
   {
@@ -125,5 +128,18 @@ export const reservation = [
     title: "nuage gris",
     name: "Stratus",
     content: "Pour broyer du noir en paix",
+  },
+];
+
+export const listFooter = [
+  {
+    innovation: ["ressources", "blog", "produits"],
+    inspiration: [
+      "succes stories",
+      "galerie de projets",
+      "citations inspiratantes",
+    ],
+    shop: ["catalogue", "offres spéciales", "promotions"],
+    socials: [Pinterest, Xtwitter, Instagram],
   },
 ];

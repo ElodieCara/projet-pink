@@ -1,0 +1,40 @@
+.collapse {
+  width: 100%;
+  padding: 18px;
+
+  &__toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 52px;
+    font-size: 18px;
+    text-align: left;
+    width: 40%;
+    background: transparent;
+    border: unset;
+    cursor: pointer;
+    margin: 0;
+    border-radius: 10px;
+    color: white;
+  }
+
+  &__icon {
+    text-align: right;
+    width: 5% !important;
+  }
+
+  &__content {
+    overflow: hidden;
+    height: 0;
+    transition: height ease 0.3s;
+
+    &__text {
+      font-size: 18px;
+      font-weight: 400;
+      padding: 0;
+      line-height: 25.67px;
+      border-radius: 5px;
+      color: $primary-color;
+    }
+  }
+}
