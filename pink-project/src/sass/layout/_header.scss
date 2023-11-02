@@ -73,6 +73,7 @@
       font-weight: bold;
       color: $primary-color;
       @include desktop {
+        width: 30%;
         position: relative;
         top: -102px;
         left: 224px;

@@ -730,7 +730,7 @@ input {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 55%;
+  height: 48%;
   background-image: linear-gradient(to top, #c1a6b6, rgba(185, 159, 186, 0.511)), url(/src/assets/fond-footer.jpg);
   background-size: cover;
   background-position: center top;
@@ -1119,7 +1119,7 @@ input {
 .testimonial__container {
   display: flex;
   flex-direction: column;
-  height: 80%;
+  height: 100vh;
   margin-top: 10px;
 }
 @media screen and (min-width: 990px) {
@@ -1133,7 +1133,7 @@ input {
 
 .reservation {
   width: 100%;
-  height: 130vh;
+  height: 144vh;
   padding: 50px;
 }
 @media screen and (min-width: 990px) {

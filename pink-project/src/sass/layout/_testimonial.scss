@@ -21,12 +21,13 @@
   &__container {
     display: flex;
     flex-direction: column;
-    height: 80%;
+    height: 100vh;
     margin-top: 10px;
 
     @include desktop {
       display: flex;
       flex-direction: row;
+      height: auto;
       align-items: center;
       margin: 50px 0;
     }

@@ -35,6 +35,9 @@
       display: block;
       padding: 0;
       margin-bottom: 2px;
+      @include desktop {
+        margin-bottom: 0;
+      }
     }
   }
 }
