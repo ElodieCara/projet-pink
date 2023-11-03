@@ -2,6 +2,13 @@ import Stratus from "@/assets/cloudStratus.jpg";
 import Cumulus from "@/assets/cloudCumulus.jpg";
 import Rose from "@/assets/rose.jpg";
 import Nimbus from "@/assets/cloudNimbus.jpg";
+import Purpple from "@/assets/PurppleCloud.jpg";
+import Irina from "@/assets/irina-iriser.jpg";
+import Bubble from "@/assets/bubble.jpg";
+import Eau from "@/assets/water.jpg";
+import Lune from "@/assets/moon.jpg";
+import Bonheur from "@/assets/joyce.jpg";
+import Glace from "@/assets/glace.jpg";
 import Champ from "@/assets/champ.jpg";
 import Willow from "@/assets/WillowBrise.jpg";
 import Aurore from "@/assets/AuroreBrume.jpg";
@@ -54,6 +61,70 @@ export const articles = [
     image: Champ,
     date: "31 février",
     title: "Vent",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    link: "",
+    type: "article",
+  },
+
+  {
+    id: 6,
+    image: Bubble,
+    date: "31 février",
+    title: "Bulles",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    link: "",
+    type: "article",
+  },
+  {
+    id: 7,
+    image: Purpple,
+    date: "31 février",
+    title: "Cumulus Fractus",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    link: "",
+    type: "interview",
+  },
+  {
+    id: 8,
+    image: Irina,
+    date: "31 février",
+    title: "Fleur",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    link: "",
+    type: "interview",
+  },
+  {
+    id: 9,
+    image: Eau,
+    date: "31 février",
+    title: "Eau",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    link: "",
+    type: "article",
+  },
+  {
+    id: 10,
+    image: Lune,
+    date: "31 février",
+    title: "Lune",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    link: "",
+    type: "interview",
+  },
+  {
+    id: 11,
+    image: Bonheur,
+    date: "31 février",
+    title: "Bonheur",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    link: "",
+    type: "interview",
+  },
+  {
+    id: 12,
+    image: Glace,
+    date: "31 février",
+    title: "Glace",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     link: "",
     type: "article",

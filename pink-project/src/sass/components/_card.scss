@@ -7,9 +7,13 @@
     width: 30%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
       rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    @for $i from 1 through 5 {
+    @for $i from 1 through 100 {
       &:nth-child(#{$i}) {
-        width: if($i == 2, 66%, 32%);
+        @if $i == 2 or $i == 7 or $i == 12 {
+          width: 66%;
+        } @else {
+          width: 32%;
+        }
       }
     }
 
