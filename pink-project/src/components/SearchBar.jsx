@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import Glass from "@/assets/Search.svg";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
@@ -30,6 +30,10 @@ const SearchBar = ({ onSearch }) => {
       />
     </form>
   );
+};
+
+SearchBar.propTypes = {
+  onSearch: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

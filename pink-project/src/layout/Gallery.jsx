@@ -3,18 +3,21 @@ import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import SearchBar from "../components/SearchBar";
 import { articles } from "../data/data.js";
-import Air from "../assets/Air.svg";
+import Load from "../components/Load";
 
 function Gallery() {
   const [news, setNews] = useState([]); // État pour tous les articles
   const [filteredNews, setFilteredNews] = useState([]); // État pour les articles filtrés
   const [filter, setFilter] = useState("all"); // État pour le type de filtre (all, interview, article)
+  const [showMore, setShowMore] = useState(5); // Nombre d'articles supplémentaires à afficher
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setNews(articles); // Initialisation de l'état avec les articles provenant de data.js
   }, []);
 
   useEffect(() => {
+    // Mise à jour des articles filtrés en fonction du type sélectionné
     if (filter === "all") {
       setFilteredNews(news); // Si le filtre est réglé sur 'all', afficher tous les articles
     } else {
@@ -33,6 +36,14 @@ function Gallery() {
 
   const handleFilter = (type) => {
     setFilter(type); // Définir le type de filtre (all, interview, article)
+  };
+
+  const loadMore = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setShowMore(showMore + 5); // Charger 5 articles supplémentaires
+      setLoading(false);
+    }, 2000);
   };
 
   return (
@@ -70,8 +81,10 @@ function Gallery() {
 
       {/* Afficher les articles filtrés */}
       <div className="gallery__container">
-        {filteredNews.length > 0 ? ( // Vérifier s'il y a des articles à afficher
-          filteredNews.map((item) => (
+        {filteredNews.slice(0, showMore).map(
+          (
+            item // Affichage restreint aux 'showMore' articles
+          ) => (
             <div className="card" key={item.id}>
               <Link to={`/news/${item.id}`}>
                 <Card
@@ -83,18 +96,20 @@ function Gallery() {
                 />
               </Link>
             </div>
-          ))
-        ) : (
-          <p>Aucun article trouvé pour cette catégorie.</p> // Afficher s'il n'y a pas d'articles
+          )
         )}
-
-        {/* Éléments supplémentaires pour la pagination ou charger plus d'articles */}
+        {loading && <Load />}
         <div className="gallery__container__pages">
-          <div className="gallery__container__pages__loader">
-            <img src={Air} alt="Logo Cloud" style={{ width: "80px" }} />
-            <p>Charger les news suivantes</p>
+          <div className="gallery__container__pages__showmore">
+            <button
+              onClick={loadMore}
+              disabled={showMore >= filteredNews.length || loading}
+            >
+              {showMore >= filteredNews.length ? "Fin" : "Charger plus"}
+
+              <Load />
+            </button>
           </div>
-          <div className="gallery__container__pages__number">123...5</div>
         </div>
       </div>
     </div>
