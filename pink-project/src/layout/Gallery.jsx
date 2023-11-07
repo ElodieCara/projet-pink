@@ -11,6 +11,7 @@ function Gallery() {
   const [filter, setFilter] = useState("all"); // État pour le type de filtre (all, interview, article)
   const [showMore, setShowMore] = useState(5); // Nombre d'articles supplémentaires à afficher
   const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     setNews(articles); // Initialisation de l'état avec les articles provenant de data.js
@@ -32,10 +33,15 @@ function Gallery() {
       });
       setFilteredNews(filtered); // Mettre à jour l'état avec les articles filtrés
     }
-  }, [filter, news]); // Mise à jour lorsque le filtre ou les articles changent
+  }, [filter, news, searchTerm]); // Mise à jour lorsque le filtre ou les articles changent
 
   const handleFilter = (type) => {
     setFilter(type); // Définir le type de filtre (all, interview, article)
+  };
+
+  const handleSearch = (searchTerm) => {
+    console.log("Recherche pour :", searchTerm);
+    setSearchTerm(searchTerm);
   };
 
   const loadMore = () => {
@@ -75,7 +81,7 @@ function Gallery() {
 
         {/* Composant de barre de recherche */}
         <div className="gallery__nav__search">
-          <SearchBar />
+          <SearchBar onSearch={handleSearch} />
         </div>
       </div>
 
@@ -98,7 +104,7 @@ function Gallery() {
             </div>
           )
         )}
-        {loading && <Load />}
+        {/* {loading && <Load />} */}
         <div className="gallery__container__pages">
           <div className="gallery__container__pages__showmore">
             <button
@@ -106,8 +112,15 @@ function Gallery() {
               disabled={showMore >= filteredNews.length || loading}
             >
               {showMore >= filteredNews.length ? "Fin" : "Charger plus"}
-
-              <Load />
+              <div
+                className={`gallery__container__pages__showmore--loader ${
+                  loading
+                    ? "gallery__container__pages__showmore--loader-show"
+                    : ""
+                }`}
+              >
+                {loading && <Load />}
+              </div>
             </button>
           </div>
         </div>
