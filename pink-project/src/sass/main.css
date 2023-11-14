@@ -24,10 +24,12 @@ html {
 
 #root {
   width: 100%;
+  overflow-x: hidden;
   margin: 0 auto;
   padding: 0;
   position: relative;
   z-index: 1000;
+  border: 2px solid red;
 }
 
 header::after {
@@ -141,6 +143,11 @@ p {
   p {
     font-family: "Inria Serif", serif;
     font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  p {
+    font-size: 20px;
   }
 }
 
@@ -732,11 +739,21 @@ input {
     bottom: 380px;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  .article .card__content {
+    bottom: 91px;
+  }
+}
 .article .card__content__wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  .article .card__content__wrapper {
+    gap: 0;
+  }
 }
 .article .card__content__wrapper-date {
   font-weight: bold;
@@ -858,12 +875,20 @@ input {
     left: 30px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
-  .testimonial__container__slide__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: lightgray 50%;
+}
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  .testimonial__container__slide__image {
+    bottom: 118px;
+    left: 191px;
+    width: 167px;
+    height: 182px;
   }
+}
+.testimonial__container__slide__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: lightgray 50%;
 }
 .testimonial__container__slide__content {
   margin: 0 30px 30px;
@@ -885,6 +910,12 @@ input {
     padding: auto;
     margin: 0 auto;
     color: inherit;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  .testimonial__container__slide__content {
+    bottom: 250px;
+    padding-top: 35%;
   }
 }
 @media screen and (min-width: 990px) {
@@ -923,8 +954,8 @@ input {
 }
 
 .indicator {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: #ccc;
   margin: 0 5px;
@@ -1018,6 +1049,11 @@ input {
     right: 70px;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  .footer__container__logo {
+    width: 20%;
+  }
+}
 .footer::after {
   content: "";
   position: absolute;
@@ -1044,6 +1080,11 @@ input {
     background-position: center top;
     background-attachment: fixed;
     z-index: -1000;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  .footer::after {
+    height: 45%;
   }
 }
 .footer__copyright {
@@ -1141,6 +1182,27 @@ input {
     left: 224px;
     font-size: 24px;
   }
+}
+.header__container__btn {
+  color: white !important;
+  text-align: center;
+  font-size: auto;
+  font-weight: 100;
+  border: 1px solid #f1ebee;
+  border-radius: 30px;
+  background-color: rgba(217, 217, 217, 0.5803921569);
+  color: black;
+  font-weight: bold;
+  margin: 2px;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__container__btn:hover {
+  box-shadow: 0 0 20px #fff;
 }
 .header__navbar {
   width: 100%;
@@ -1422,6 +1484,12 @@ input {
     margin: 50px 0;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  .testimonial__container {
+    margin: 50px 0;
+    height: auto;
+  }
+}
 
 .reservation {
   width: 100%;
@@ -1434,6 +1502,11 @@ input {
     height: auto;
     margin: 0 auto;
     padding: 0 0 50px 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  .reservation {
+    height: auto;
   }
 }
 @media screen and (min-width: 990px) {
@@ -1464,6 +1537,18 @@ input {
     margin: 60px 0 60px 50px;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  .reservation__container {
+    max-width: 700px;
+    width: 100%;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 60px auto;
+  }
+}
 .reservation__container__card {
   border: 1px solid #d9d9d9;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -1490,6 +1575,16 @@ input {
     transition: background-color 0.3s;
     text-align: center;
   }
+}
+@media screen and (min-width: 990px) and (min-width: 768px) and (max-width: 990px) {
+  .reservation__container__card {
+    display: inline-block;
+    top: 50px;
+    position: relative;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 990px) {
   .reservation__container__card:hover {
     background-color: #a77491;
   }

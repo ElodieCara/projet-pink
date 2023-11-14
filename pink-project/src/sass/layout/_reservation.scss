@@ -9,6 +9,10 @@
     padding: 0 0 50px 0;
   }
 
+  @include tablet {
+    height: auto;
+  }
+
   & h2 {
     @include desktop {
       font-family: $font-family-primary;

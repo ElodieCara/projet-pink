@@ -3,22 +3,30 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function Reservation() {
+  // State pour stocker les données des nuages
   const [clouds, setClouds] = useState([]);
+
+  // Points de rupture pour les médias query
   const desktopBreakpoint = 990;
   const tabletBreakpoint = 768;
-  // const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  // const [isTablet, setIsTablet] = useState(window.innerWidth < 990);
+
+  // State pour suivre la largeur de la fenêtre
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  // Effet de redimensionnement pour mettre à jour la largeur de la fenêtre
   useEffect(() => {
+    // Initialisez les données des nuages
     setClouds(reservation);
 
+    // Gérez le redimensionnement de la fenêtre
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
-      // setIsTablet(window.innerWidth > 768);
     };
 
+    // Ajoutez un écouteur d'événements de redimensionnement
     window.addEventListener("resize", handleResize);
+
+    // Retirez l'écouteur d'événements lors du démontage du composant
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -27,17 +35,7 @@ export default function Reservation() {
   return (
     <div className="reservation">
       <h2>Nos Nuages !</h2>
-      <div
-        className="reservation__container"
-        style={
-          {
-            // display: isTablet ? "grid" : "flex",
-            // gridTemplateColumns: isTablet ? "200px 300px" : "1fr", // Deux colonnes pour les tablettes
-            // gridAutoRows: isTablet ? "1fr" : "",
-            // placeItems: "center",
-          }
-        } // Espace autour des éléments
-      >
+      <div className="reservation__container">
         {clouds.map((clouds, cl) => (
           <div
             className="reservation__container__card"
@@ -51,7 +49,6 @@ export default function Reservation() {
                   : window.innerWidth >= desktopBreakpoint
                   ? `${cl * 30}px`
                   : "",
-              // right: !isMobile ? `${cl * 30}px` : "",
             }}
           >
             <Link to={`/reservations/${clouds.id}`}>
