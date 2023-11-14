@@ -111,16 +111,13 @@ function Gallery() {
               onClick={loadMore}
               disabled={showMore >= filteredNews.length || loading}
             >
-              {showMore >= filteredNews.length ? "Fin" : "Charger plus"}
-              <div
-                className={`gallery__container__pages__showmore--loader ${
-                  loading
-                    ? "gallery__container__pages__showmore--loader-show"
-                    : ""
-                }`}
-              >
-                {loading && <Load />}
-              </div>
+              {loading ? (
+                <Load /> // Affiche le composant Load pendant le chargement
+              ) : showMore >= filteredNews.length ? (
+                "Fin"
+              ) : (
+                "Charger plus"
+              )}
             </button>
           </div>
         </div>

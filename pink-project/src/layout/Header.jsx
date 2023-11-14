@@ -1,8 +1,12 @@
 import Navbar from "../layout/Navbar";
+// import { NavLink } from "react-router-dom";
+// import { useState } from "react";
 import Air from "../assets/Air.svg";
 import Cloud from "../assets/Cloud.svg";
 
 export default function Header() {
+  // const [click, setClick] = useState(false);
+  // const handleClick = () => setClick(!click);
   return (
     <header className="header">
       <Navbar />
@@ -28,6 +32,12 @@ export default function Header() {
             </p>
           </blockquote>
         </div>
+        {/* <button className="header__container__btn">
+         
+          <NavLink exact="true" to="" onClick={handleClick}>
+            Réservation
+          </NavLink>
+        </button> */}
       </div>
     </header>
   );

@@ -72,12 +72,36 @@
       font-size: 24px;
       font-weight: bold;
       color: $primary-color;
+      height: 0;
       @include desktop {
         width: 20%;
         position: relative;
         top: -102px;
         left: 224px;
         font-size: 24px;
+      }
+    }
+
+    &__btn {
+      color: white !important;
+      text-align: center;
+      font-size: auto;
+      font-weight: 100;
+      border: 1px solid #f1ebee;
+      border-radius: 30px;
+      background-color: rgba(217, 217, 217, 0.5803921569);
+      color: black;
+      font-weight: bold;
+      margin: 2px;
+      cursor: pointer;
+      width: 150px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        box-shadow: 0 0 20px #fff;
       }
     }
   }
