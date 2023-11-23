@@ -21,6 +21,7 @@
       justify-content: space-between;
       border-bottom: 4px solid $primary-color;
     }
+
     &__list {
       display: flex;
       align-items: center;
@@ -77,6 +78,10 @@
         align-items: center;
         justify-content: center;
 
+        &:hover {
+          box-shadow: 0 0 20px $secondary-color;
+        }
+
         & button {
           color: white;
           position: relative;
@@ -85,18 +90,15 @@
           justify-content: center;
           // background: rgba(255, 255, 255, 0.5);
           // color: #c2a6b4;
-
-          &:hover {
-            box-shadow: 0 0 20px $secondary-color;
-          }
+          padding: 12px 20px;
 
           @include desktop {
-            padding: 10px 80px;
+            padding: 10px 40px;
           }
 
           & svg {
             position: absolute;
-            transform: translateY(-20%);
+            transform: translateY(-0%);
             @include desktop {
               position: absolute;
               top: 50%;
