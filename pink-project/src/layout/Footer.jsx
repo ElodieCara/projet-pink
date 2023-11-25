@@ -57,9 +57,9 @@ export default function Footer() {
           <img src={Logo} alt="logo social" />
         </div>
       </div>
-      <div className="footer__copyright">
+      {/* <div className="footer__copyright">
         <p>&copy; {currentYear} ECara. Tous droits réservés.</p>
-      </div>
+      </div> */}
     </footer>
   );
 }

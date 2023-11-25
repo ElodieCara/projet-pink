@@ -1,9 +1,9 @@
 .testimonial__container__slide {
-  background-color: $primary-color;
-  @include shadow;
-  width: 50vh;
-  height: 50vh;
+  height: 100vh;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @include desktop {
     display: flex;
@@ -16,13 +16,25 @@
     gap: 2rem;
   }
 
+  @include tablet {
+    max-height: 250px;
+    width: 100%;
+  }
+
   &--logo {
     position: relative;
-    bottom: -33px;
+    bottom: -23px;
     z-index: 9;
-    left: 39px;
+    // left: 11px;
+
     @include desktop {
       display: none;
+    }
+
+    @include tablet {
+      width: 80%;
+      bottom: 19px;
+      left: 46px;
     }
   }
 
@@ -53,12 +65,14 @@
   &__image {
     overflow: hidden;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 112px;
+    // float: inline-start;
     position: relative;
-    bottom: 83px;
-    left: 121px;
+    bottom: 87px;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
     z-index: 999;
-    width: 100px;
-    height: 100px;
     @include shadow;
 
     @include desktop {
@@ -73,10 +87,10 @@
     }
 
     @include tablet {
-      bottom: 118px;
-      left: 191px;
-      width: 167px;
-      height: 182px;
+      bottom: 120px;
+      left: 250px;
+      width: 112px;
+      height: 112px;
     }
 
     & img {
@@ -90,12 +104,17 @@
   &__content {
     margin: 0 30px 30px;
     background-color: rgb(124, 90, 123);
-    height: 100%;
+    height: 400px;
+    width: 350px;
     position: relative;
-    bottom: 143px;
-    padding-top: 25%;
+    bottom: 205px;
+    padding-top: 6rem;
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     @include desktop {
       text-align: left;
@@ -109,8 +128,21 @@
     }
 
     @include tablet {
-      bottom: 250px;
-      padding-top: 35%;
+      bottom: 205px;
+      padding-top: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $primary-color;
+      @include shadow;
+      width: 400px;
+      height: 100%;
+      margin: 0 auto;
+      z-index: -99;
+      top: 30px;
+      border: 1px solid red;
     }
 
     &__name {
@@ -130,10 +162,14 @@
     }
 
     &__story {
-      margin: 20px;
+      margin: 0 20px;
 
       @include desktop {
         margin: 10px;
+      }
+
+      @include tablet {
+        margin: 20px;
       }
     }
   }
@@ -141,7 +177,7 @@
   &__indicators {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 35px;
     @include desktop {
       display: none;
     }
