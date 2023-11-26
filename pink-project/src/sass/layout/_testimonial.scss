@@ -1,5 +1,5 @@
 .testimonial {
-  height: 100vh;
+  background-color: #c2a6b4;
   width: 100%;
   padding: 25px;
   display: flex;
@@ -12,6 +12,12 @@
     margin: 0 auto;
     padding: 100px 0;
     height: auto;
+    background-color: transparent;
+  }
+
+  @include tablet {
+    height: 100%;
+    margin: 50px 0;
   }
 
   &-title {
@@ -41,9 +47,9 @@
       margin: 50px 0;
     }
 
-    @include tablet {
-      margin: 50px 0;
-      height: auto;
-    }
+    // @include tablet {
+    //   margin: 50px 0;
+    //   height: auto;
+    // }
   }
 }
