@@ -82,17 +82,19 @@
     &__logo {
       position: relative;
       bottom: 435px;
-      right: -298px;
-      width: 45%;
+      right: -394px;
+      width: 25%;
       height: 0;
       @include desktop {
         bottom: 98px;
-        width: 30%;
-        right: 70px;
+        width: 100%;
+        right: 30px;
       }
 
       @include tablet {
         width: 20%;
+        bottom: 680px;
+        left: 650px;
       }
     }
   }

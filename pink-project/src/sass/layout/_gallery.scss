@@ -6,6 +6,7 @@
   @include desktop {
     width: 1024px;
     margin: 0 auto;
+    background-color: transparent;
   }
 
   &--title {
@@ -46,7 +47,7 @@
   }
 
   &__container {
-    margin: 0 5px;
+    margin: 0 30px;
     @include desktop {
       margin: 0;
       display: flex;
