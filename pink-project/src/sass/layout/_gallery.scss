@@ -1,6 +1,8 @@
 .gallery {
   width: 100%;
   margin: 0;
+  background-color: #c4a6b5;
+
   @include desktop {
     width: 1024px;
     margin: 0 auto;

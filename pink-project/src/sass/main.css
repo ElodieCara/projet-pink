@@ -12,14 +12,16 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 body,
 html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
   background-color: rgb(194, 166, 183);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 #root {
@@ -29,6 +31,9 @@ html {
   padding: 0;
   position: relative;
   z-index: 1000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header::after {
@@ -41,6 +46,10 @@ header::after {
   background-size: cover;
   background-position: center;
   height: 1204px;
+}
+
+#main {
+  flex-grow: 1;
 }
 
 a {
@@ -885,10 +894,11 @@ input {
 }
 .testimonial__container__slide__content {
   margin: 0 30px 30px;
-  background-color: rgb(124, 90, 123);
+  background-color: #f1ebee;
   height: 450px;
   max-width: 100%;
   position: relative;
+  z-index: 1;
   bottom: 205px;
   padding-top: 6rem;
   color: white;
@@ -905,8 +915,8 @@ input {
     box-shadow: none;
     position: unset;
     width: 60%;
-    height: 0;
-    padding: auto;
+    height: auto;
+    padding: 0;
     margin: 0 auto;
     color: inherit;
   }
@@ -914,13 +924,13 @@ input {
 .testimonial__container__slide__content::after {
   content: "";
   position: absolute;
-  background-color: #f1ebee;
+  background-color: rgb(124, 90, 123);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 105%;
+  width: 95%;
   height: 100%;
   margin: 0 auto;
-  z-index: -99;
-  top: 9px;
+  z-index: -51;
+  top: -10px;
 }
 @media screen and (min-width: 990px) {
   .testimonial__container__slide__content::after {
@@ -953,7 +963,7 @@ input {
 }
 @media screen and (min-width: 767px) and (max-width: 990px) {
   .testimonial__container__slide__content__story {
-    margin: 20px;
+    margin: 35px;
   }
 }
 .testimonial__container__slide__indicators {
@@ -1003,16 +1013,22 @@ input {
   }
 }
 .footer__container__column {
+  width: 100%;
   display: flex;
   color: white;
   border-bottom: 1px solid white;
 }
 @media screen and (min-width: 990px) {
   .footer__container__column {
-    width: 30%;
+    width: 100%;
     color: white;
     border-right: 1px solid white;
     border-bottom: none;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 990px) {
+  .footer__container__column {
+    width: 100%;
   }
 }
 .footer__container__column h2 {
@@ -1339,6 +1355,7 @@ input {
 .gallery {
   width: 100%;
   margin: 0;
+  background-color: #c4a6b5;
 }
 @media screen and (min-width: 990px) {
   .gallery {
@@ -1529,6 +1546,8 @@ input {
 @media screen and (min-width: 767px) and (max-width: 990px) {
   .reservation {
     height: 50vh;
+    margin: 50px auto;
+    padding: 0;
   }
 }
 @media screen and (min-width: 990px) {

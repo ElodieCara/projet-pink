@@ -101,10 +101,11 @@
 
   &__content {
     margin: 0 30px 30px;
-    background-color: rgb(124, 90, 123);
+    background-color: $primary-color;
     height: 450px;
     max-width: 100%;
     position: relative;
+    z-index: 1;
     bottom: 205px;
     padding-top: 6rem;
     color: white;
@@ -120,27 +121,26 @@
       box-shadow: none;
       position: unset;
       width: 60%;
-      height: 0;
-      padding: auto;
+      height: auto;
+      padding: 0;
       margin: 0 auto;
       color: inherit;
     }
 
     // @include tablet {
-    //   bottom: 205px;
-    //   padding-top: 0;
+    //   padding: 0 50px;
     // }
 
     &::after {
       content: "";
       position: absolute;
-      background-color: $primary-color;
+      background-color: rgb(124, 90, 123);
       @include shadow;
-      width: 105%;
+      width: 95%;
       height: 100%;
       margin: 0 auto;
-      z-index: -99;
-      top: 9px;
+      z-index: -51;
+      top: -10px;
       // border: 1px solid red;
 
       @include desktop {
@@ -172,7 +172,7 @@
       }
 
       @include tablet {
-        margin: 20px;
+        margin: 35px;
       }
     }
   }
