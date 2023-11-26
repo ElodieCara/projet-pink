@@ -29,11 +29,11 @@
       display: none;
     }
 
-    // @include tablet {
-    //   width: 80%;
-    //   bottom: 19px;
-    //   left: 46px;
-    // }
+    @include tablet {
+      width: 80%;
+      bottom: -93px;
+      left: 105px;
+    }
   }
 
   &__arrow {

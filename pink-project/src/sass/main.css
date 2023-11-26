@@ -838,6 +838,13 @@ input {
     display: none;
   }
 }
+@media screen and (min-width: 767px) and (max-width: 990px) {
+  .testimonial__container__slide--logo {
+    width: 80%;
+    bottom: -93px;
+    left: 105px;
+  }
+}
 .testimonial__container__slide__arrow--prev {
   visibility: hidden;
 }
@@ -1067,13 +1074,11 @@ input {
 }
 .footer__container__logo {
   position: relative;
-  bottom: 435px;
-  right: -394px;
-  width: 25%;
-  height: 0;
+  display: none;
 }
 @media screen and (min-width: 990px) {
   .footer__container__logo {
+    display: flex;
     bottom: 98px;
     width: 100%;
     right: 30px;
@@ -1081,9 +1086,7 @@ input {
 }
 @media screen and (min-width: 767px) and (max-width: 990px) {
   .footer__container__logo {
-    width: 20%;
-    bottom: 680px;
-    left: 650px;
+    display: none;
   }
 }
 .footer::after {
@@ -1107,7 +1110,7 @@ input {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 70rem;
+    height: 75rem;
     background-image: linear-gradient(to top, #c1a6b6, rgba(185, 159, 186, 0.511)), url(/src/assets/fond-footer.jpg);
     background-size: cover;
     background-position: center top;
@@ -1495,7 +1498,7 @@ input {
   .testimonial {
     max-width: 1024px;
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 165px 0;
     height: auto;
     background-color: transparent;
   }
