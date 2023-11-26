@@ -8,11 +8,9 @@ export default function Testimonial() {
   }, []);
 
   return (
-    <div className="testimonial">
+    <section className="testimonial">
       <h2 className="testimonial-title">Témoignages</h2>
-      <div className="testimonial__container">
-        <SlideShow testimonials={testimonials} />
-      </div>
-    </div>
+      <SlideShow testimonials={testimonials} />
+    </section>
   );
 }

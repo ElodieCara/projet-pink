@@ -72,7 +72,7 @@ const SlideShow = ({ testimonials }) => {
           <img
             src={Guillemets}
             alt="logo-guillemets"
-            style={{ width: "20%" }}
+            style={{ width: "15%" }}
           />
         </div>
         <div className="testimonial__container__slide__image">
