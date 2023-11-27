@@ -142,10 +142,6 @@
 }
 
 .article {
-  // margin-bottom: 2px;
-  // @include desktop {
-  //   margin-bottom: 0;
-  // }
   border: 1px solid white;
   @include desktop {
     border: none;
