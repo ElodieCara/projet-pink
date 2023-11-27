@@ -16,4 +16,9 @@ export default defineConfig({
       "Cache-Control": "max-age=3156000",
     },
   },
+  rollupOptions: {
+    input: {
+      main: path.resolve(__dirname, "src/main.jsx"),
+    },
+  },
 });
