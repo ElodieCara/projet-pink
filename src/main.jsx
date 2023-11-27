@@ -8,8 +8,12 @@ import "./sass/main.scss";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
+    path: "/Projet-Pink/",
+    element: (
+      <>
+        <Home />
+      </>
+    ),
     errorElement: <ErrorPage />,
   },
 ]);
