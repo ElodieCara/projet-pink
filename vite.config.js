@@ -6,9 +6,20 @@ import path from "path";
 export default defineConfig({
   base: "/projet-pink/",
   plugins: [react()],
+  esbuild: {
+    loader: "jsx",
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "./runtimeConfig": "./runtimeConfig.browser",
+    },
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        ".js": "jsx",
+      },
     },
   },
   server: {
