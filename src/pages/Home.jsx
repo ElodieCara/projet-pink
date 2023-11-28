@@ -10,10 +10,10 @@ export default function Home() {
     <>
       <Header />
       <main id="main">
-        <Gallery />
-        <Testimonial />
-        <Reservation />
-        <Subscribe />
+        <Gallery id="gallery" />
+        <Testimonial id="testimonial" />
+        <Reservation id="reservation" />
+        <Subscribe id="subscribe" />
       </main>
       <Footer />
     </>

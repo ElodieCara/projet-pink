@@ -8,7 +8,7 @@ import "./sass/main.scss";
 
 const router = createBrowserRouter([
   {
-    path: "/Projet-Pink/",
+    path: "/projet-pink/",
     element: (
       <>
         <Home />
