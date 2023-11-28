@@ -1,10 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import * as path from "path";
+import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/Projet-Pink/",
+  base: "/projet-pink/",
   plugins: [react()],
   resolve: {
     alias: {
@@ -14,14 +14,6 @@ export default defineConfig({
   server: {
     headers: {
       "Cache-Control": "max-age=3156000",
-    },
-  },
-  build: {
-    outDir: "dist",
-  },
-  rollupOptions: {
-    input: {
-      main: path.resolve(__dirname, "./src/main.jsx"),
     },
   },
 });

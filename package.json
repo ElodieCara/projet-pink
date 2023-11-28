@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://elodiecara.github.io/Projet-Pink",
+  "homepage": "https://elodiecara.github.io/projet-pink",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
