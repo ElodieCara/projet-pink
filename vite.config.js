@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import path from "path";
+import * as path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,9 +16,12 @@ export default defineConfig({
       "Cache-Control": "max-age=3156000",
     },
   },
+  build: {
+    outDir: "dist",
+  },
   rollupOptions: {
     input: {
-      main: path.resolve(__dirname, "src/main.jsx"),
+      main: path.resolve(__dirname, "./src/main.jsx"),
     },
   },
 });
