@@ -12,8 +12,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "./runtimeConfig": "./runtimeConfig.browser",
     },
+    extensions: [".js", ".jsx", ".json"],
   },
   optimizeDeps: {
     esbuildOptions: {
