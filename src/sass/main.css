@@ -804,6 +804,9 @@ input {
 
 .testimonial__container__slide {
   margin: 0 auto;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 @media screen and (min-width: 990px) {
   .testimonial__container__slide {
@@ -994,6 +997,16 @@ input {
 }
 .indicator.active {
   background-color: #55a9a9;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .footer {
