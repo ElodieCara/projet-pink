@@ -58,7 +58,9 @@ function Collapse(props) {
             : { height: "0px" }
         }
       >
-        <ul className="collapse__content__text">{props.children}</ul>
+        <ul className="collapse__content__text">
+          {props.children || <p>Pas de contenu disponible</p>}
+        </ul>
       </div>
     </div>
   );
@@ -66,7 +68,11 @@ function Collapse(props) {
 
 Collapse.propTypes = {
   label: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
+};
+
+Collapse.defaultProps = {
+  children: <p>Pas de contenu disponible</p>,
 };
 
 export default Collapse;

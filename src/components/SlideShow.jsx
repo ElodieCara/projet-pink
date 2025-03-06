@@ -8,46 +8,47 @@ import {
 import Guillemets from "../assets/guillemets.svg";
 
 const SlideShow = ({ testimonials }) => {
-  // État local pour gérer la diapositive actuelle
   const [currentSlide, setCurrentSlide] = useState(0);
-  // Longueur du tableau de témoignages
+  const [isTransitioning, setIsTransitioning] = useState(false); // État pour gérer la transition fluide
   const slideArrayLength = testimonials.length;
-  // Référence pour le conteneur du carrousel
   const slideRef = useRef(null);
 
   // Fonction pour passer à la diapositive précédente
   const prevSlide = () => {
-    setCurrentSlide(
-      currentSlide === 0 ? slideArrayLength - 1 : currentSlide - 1
-    );
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentSlide((prev) => (prev === 0 ? slideArrayLength - 1 : prev - 1));
+      setIsTransitioning(false);
+    }, 300);
   };
 
   // Fonction pour passer à la diapositive suivante
   const nextSlide = () => {
-    setCurrentSlide(
-      currentSlide === slideArrayLength - 1 ? 0 : currentSlide + 1
-    );
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentSlide((prev) => (prev + 1) % slideArrayLength);
+      setIsTransitioning(false);
+    }, 300);
   };
 
   // Gestion des gestes tactiles pour changer de diapositive
   const touchStart = (e) => {
-    slideRef.current.startX = e.touches[0].clientX; // Enregistre la position initiale du toucher
+    slideRef.current.startX = e.touches[0].clientX;
   };
 
   const touchMove = (e) => {
     if (slideRef.current.startX || slideRef.current.startX === 0) {
-      const diff = slideRef.current.startX - e.touches[0].clientX; // Calcul de la différence de position
+      const diff = slideRef.current.startX - e.touches[0].clientX;
       if (diff > 50) {
-        nextSlide(); // Passer à la diapositive suivante si le mouvement est suffisant
-        slideRef.current.startX = null; // Réinitialisation de la position initiale du toucher
+        nextSlide();
+        slideRef.current.startX = null;
       } else if (diff < -50) {
-        prevSlide(); // Passer à la diapositive précédente si le mouvement est suffisant
-        slideRef.current.startX = null; // Réinitialisation de la position initiale du toucher
+        prevSlide();
+        slideRef.current.startX = null;
       }
     }
   };
 
-  // Accéder au témoignage actuel en fonction de la diapositive actuelle
   const currentTestimonial = testimonials[currentSlide];
 
   return (
@@ -57,7 +58,6 @@ const SlideShow = ({ testimonials }) => {
       onTouchStart={touchStart}
       onTouchMove={touchMove}
     >
-      {/* Flèche gauche pour la version desktop */}
       {slideArrayLength > 1 && (
         <FontAwesomeIcon
           icon={faArrowAltCircleLeft}
@@ -67,7 +67,15 @@ const SlideShow = ({ testimonials }) => {
         />
       )}
 
-      <div className="testimonial__container__slide">
+      <div
+        className={`testimonial__container__slide ${
+          isTransitioning ? "fade-out" : "fade-in"
+        }`}
+      >
+        {console.log(
+          "Classe CSS appliquée :",
+          isTransitioning ? "fade-out" : "fade-in"
+        )}
         <div className="testimonial__container__slide--logo">
           <img
             src={Guillemets}
@@ -91,7 +99,6 @@ const SlideShow = ({ testimonials }) => {
         </div>
       </div>
 
-      {/* Flèche droite pour la version desktop */}
       {slideArrayLength > 1 && (
         <FontAwesomeIcon
           icon={faArrowAltCircleRight}
@@ -101,7 +108,6 @@ const SlideShow = ({ testimonials }) => {
         />
       )}
 
-      {/* Indicateurs de diapositives pour la version mobile */}
       {slideArrayLength > 1 && (
         <div className="testimonial__container__slide__indicators">
           {testimonials.map((testimonial, index) => (

@@ -55,7 +55,7 @@ export default function Reservation() {
               <div className="reservation__container__card__text">
                 <p>{clouds.title}</p>
                 <h4>{clouds.name}</h4>
-                <quote>{clouds.content}</quote>
+                <blockquote>{clouds.content}</blockquote>
               </div>
             </Link>
           </div>

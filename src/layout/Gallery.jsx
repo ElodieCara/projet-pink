@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import SearchBar from "../components/SearchBar";
@@ -6,51 +6,42 @@ import { articles } from "../data/data.js";
 import Load from "../components/Load";
 
 function Gallery() {
-  const [news, setNews] = useState([]); // État pour tous les articles
-  const [filteredNews, setFilteredNews] = useState([]); // État pour les articles filtrés
-  const [filter, setFilter] = useState("all"); // État pour le type de filtre (all, interview, article)
-  const [showMore, setShowMore] = useState(5); // Nombre d'articles supplémentaires à afficher
+  const [news, setNews] = useState([]); // État des articles
+  const [filter, setFilter] = useState("all"); // Filtrage par catégorie
+  const [showMore, setShowMore] = useState(5); // Nombre d'articles affichés
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Charger les articles au montage du composant
   useEffect(() => {
-    setNews(articles); // Initialisation de l'état avec les articles provenant de data.js
+    setNews(articles);
+  }, [searchTerm]);
+
+  // Optimisation : Filtrage des articles avec useMemo pour éviter des recalculs inutiles
+  const filteredNews = useMemo(() => {
+    return filter === "all"
+      ? news
+      : news.filter((item) => item.type === filter);
+  }, [filter, news]);
+
+  // Gestion du filtrage
+  const handleFilter = useCallback((type) => {
+    setFilter(type);
   }, []);
-
-  useEffect(() => {
-    // Mise à jour des articles filtrés en fonction du type sélectionné
-    if (filter === "all") {
-      setFilteredNews(news); // Si le filtre est réglé sur 'all', afficher tous les articles
-    } else {
-      // Filtrer les articles en fonction du type sélectionné (interview ou article)
-      const filtered = news.filter((item) => {
-        if (filter === "interview") {
-          return item.type === "interview"; // Afficher les articles de type 'interview'
-        } else if (filter === "article") {
-          return item.type === "article"; // Afficher les articles de type 'interview'
-        }
-        return true; // Renvoyer true pour les autres cas
-      });
-      setFilteredNews(filtered); // Mettre à jour l'état avec les articles filtrés
-    }
-  }, [filter, news, searchTerm]); // Mise à jour lorsque le filtre ou les articles changent
-
-  const handleFilter = (type) => {
-    setFilter(type); // Définir le type de filtre (all, interview, article)
-  };
 
   const handleSearch = (searchTerm) => {
     console.log("Recherche pour :", searchTerm);
     setSearchTerm(searchTerm);
   };
 
-  const loadMore = () => {
+  // Restaurer le nombre d'articles affichés et afficher "Fin" quand tous sont visibles
+  const loadMore = useCallback(() => {
     setLoading(true);
     setTimeout(() => {
-      setShowMore(showMore + 5); // Charger 5 articles supplémentaires
+      setShowMore((prev) => prev + 5); // Charger 5 articles comme avant
       setLoading(false);
     }, 2000);
-  };
+  }, []);
 
   return (
     <div className="gallery">
@@ -85,26 +76,23 @@ function Gallery() {
         </div>
       </div>
 
-      {/* Afficher les articles filtrés */}
+      {/* Affichage des articles */}
       <div className="gallery__container">
-        {filteredNews.slice(0, showMore).map(
-          (
-            item // Affichage restreint aux 'showMore' articles
-          ) => (
-            <div className="card" key={item.id}>
-              <Link to={`/news/${item.id}`}>
-                <Card
-                  image={item.image}
-                  title={item.title}
-                  content={item.content}
-                  type={item.type}
-                  date={item.date}
-                />
-              </Link>
-            </div>
-          )
-        )}
-        {/* {loading && <Load />} */}
+        {filteredNews.slice(0, showMore).map((item) => (
+          <div className="card" key={item.id}>
+            <Link to={`/news/${item.id}`}>
+              <Card
+                image={item.image}
+                title={item.title}
+                content={item.content}
+                type={item.type}
+                date={item.date}
+              />
+            </Link>
+          </div>
+        ))}
+
+        {/* Bouton Charger Plus avec "Fin" */}
         <div className="gallery__container__pages">
           <div className="gallery__container__pages__showmore">
             <button
@@ -112,7 +100,7 @@ function Gallery() {
               disabled={showMore >= filteredNews.length || loading}
             >
               {loading ? (
-                <Load /> // Affiche le composant Load pendant le chargement
+                <Load />
               ) : showMore >= filteredNews.length ? (
                 "Fin"
               ) : (

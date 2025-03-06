@@ -9,7 +9,7 @@ const Card = ({ type, image, title, content, date }) => {
       className={`card__body ${type === "interview" ? "interview" : "article"}`}
     >
       <div className="card__image">
-        <img src={image} alt={title} />
+        <img src={image} alt={title} loading="lazy" width="400" height="250" />
         <div className="card__image-tagline">
           <FontAwesomeIcon
             icon={faStar}
