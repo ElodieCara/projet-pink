@@ -8,11 +8,17 @@
 
 body,
 html {
+  -ms-overflow-style: none; // IE et Edge
+  scrollbar-width: none;
   background-color: rgb(194 166 183);
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  display: none; // Chrome, Safari
 }
 
 #root {
