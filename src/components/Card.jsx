@@ -9,7 +9,7 @@ const Card = ({ type, image, title, content, date }) => {
       className={`card__body ${type === "interview" ? "interview" : "article"}`}
     >
       <div className="card__image">
-        <img src={image} alt={title} loading="lazy" width="400" height="250" />
+        <img src={image} alt={title} loading="lazy" width="400" height="250" style={{ objectFit: "cover" }} />
         <div className="card__image-tagline">
           <FontAwesomeIcon
             icon={faStar}
@@ -40,4 +40,4 @@ Card.propTypes = {
   date: PropTypes.string.isRequired,
 };
 
-export default Card;
+export default Card; 

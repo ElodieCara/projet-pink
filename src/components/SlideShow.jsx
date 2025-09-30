@@ -68,9 +68,8 @@ const SlideShow = ({ testimonials }) => {
       )}
 
       <div
-        className={`testimonial__container__slide ${
-          isTransitioning ? "fade-out" : "fade-in"
-        }`}
+        className={`testimonial__container__slide ${isTransitioning ? "fade-out" : "fade-in"
+          }`}
       >
         {console.log(
           "Classe CSS appliquée :",
@@ -80,7 +79,7 @@ const SlideShow = ({ testimonials }) => {
           <img
             src={Guillemets}
             alt="logo-guillemets"
-            style={{ width: "15%" }}
+            style={{ width: "8%" }}
           />
         </div>
         <div className="testimonial__container__slide__image">

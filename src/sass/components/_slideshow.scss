@@ -39,6 +39,7 @@
   &__arrow {
     &--prev {
       visibility: hidden;
+
       @include desktop {
         visibility: visible;
         font-size: 50px;
@@ -50,6 +51,7 @@
 
     &--next {
       visibility: hidden;
+
       @include desktop {
         visibility: visible;
         font-size: 50px;
@@ -146,6 +148,7 @@
     &__date {
       margin: 10px 0;
       font-style: oblique;
+
       @include desktop {
         margin: 10px;
       }
@@ -168,6 +171,7 @@
     display: flex;
     justify-content: center;
     margin-top: -212px;
+
     @include desktop {
       display: none;
     }
@@ -181,6 +185,7 @@
   background-color: #ccc; // Couleur des points non sélectionnés
   margin: 0 5px; // Marge entre les points
   cursor: pointer;
+
   @include desktop {
     visibility: hidden;
   }
@@ -192,9 +197,7 @@
 
 .fade-out {
   opacity: 0;
-  transform: translateY(
-    10px
-  ); // Légère transition vers le bas avant le changement
+  transform: translateY(10px); // Légère transition vers le bas avant le changement
 }
 
 .fade-in {
