@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,31 +7,32 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Guillemets from "../assets/guillemets.svg";
 
-const SlideShow = ({ testimonials }) => {
+const SlideShow = ({ testimonials, autoPlay = true, delay = 5000 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false); // État pour gérer la transition fluide
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const slideArrayLength = testimonials.length;
   const slideRef = useRef(null);
+  const intervalRef = useRef(null);
 
-  // Fonction pour passer à la diapositive précédente
+  // Fonction générique pour changer de slide
+  const goToSlide = (index) => {
+    if (index === currentSlide) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentSlide(index);
+      setIsTransitioning(false);
+    }, 300);
+  };
+
   const prevSlide = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentSlide((prev) => (prev === 0 ? slideArrayLength - 1 : prev - 1));
-      setIsTransitioning(false);
-    }, 300);
+    goToSlide(currentSlide === 0 ? slideArrayLength - 1 : currentSlide - 1);
   };
 
-  // Fonction pour passer à la diapositive suivante
   const nextSlide = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentSlide((prev) => (prev + 1) % slideArrayLength);
-      setIsTransitioning(false);
-    }, 300);
+    goToSlide((currentSlide + 1) % slideArrayLength);
   };
 
-  // Gestion des gestes tactiles pour changer de diapositive
+  // Gestion du swipe tactile
   const touchStart = (e) => {
     slideRef.current.startX = e.touches[0].clientX;
   };
@@ -49,6 +50,17 @@ const SlideShow = ({ testimonials }) => {
     }
   };
 
+  // Défilement automatique
+  useEffect(() => {
+    if (autoPlay) {
+      intervalRef.current = setInterval(() => {
+        nextSlide();
+      }, delay);
+
+      return () => clearInterval(intervalRef.current); // nettoyage
+    }
+  }, [currentSlide, autoPlay, delay]);
+
   const currentTestimonial = testimonials[currentSlide];
 
   return (
@@ -58,23 +70,21 @@ const SlideShow = ({ testimonials }) => {
       onTouchStart={touchStart}
       onTouchMove={touchMove}
     >
+      {/* Flèche gauche */}
       {slideArrayLength > 1 && (
         <FontAwesomeIcon
           icon={faArrowAltCircleLeft}
           className="testimonial__container__arrow testimonial__container__slide__arrow--prev"
-          alt="flèche photos suivante"
+          alt="flèche précédente"
           onClick={prevSlide}
         />
       )}
 
+      {/* Slide */}
       <div
         className={`testimonial__container__slide ${isTransitioning ? "fade-out" : "fade-in"
           }`}
       >
-        {console.log(
-          "Classe CSS appliquée :",
-          isTransitioning ? "fade-out" : "fade-in"
-        )}
         <div className="testimonial__container__slide--logo">
           <img
             src={Guillemets}
@@ -98,22 +108,25 @@ const SlideShow = ({ testimonials }) => {
         </div>
       </div>
 
+      {/* Flèche droite */}
       {slideArrayLength > 1 && (
         <FontAwesomeIcon
           icon={faArrowAltCircleRight}
           className="testimonial__container__arrow testimonial__container__slide__arrow--next"
-          alt="flèche photos précédente"
+          alt="flèche suivante"
           onClick={nextSlide}
         />
       )}
 
+      {/* Indicateurs */}
       {slideArrayLength > 1 && (
         <div className="testimonial__container__slide__indicators">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((_, index) => (
             <div
               key={index}
-              className={`indicator ${currentSlide === index ? "active" : ""}`}
-              onClick={() => setCurrentSlide(index)}
+              className={`indicator ${currentSlide === index ? "active" : ""
+                }`}
+              onClick={() => goToSlide(index)}
             ></div>
           ))}
         </div>
@@ -124,6 +137,8 @@ const SlideShow = ({ testimonials }) => {
 
 SlideShow.propTypes = {
   testimonials: PropTypes.array.isRequired,
+  autoPlay: PropTypes.bool,
+  delay: PropTypes.number,
 };
 
 export default SlideShow;
